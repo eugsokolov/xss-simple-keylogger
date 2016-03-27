@@ -14,8 +14,18 @@
     </style>
 
     <script src="/snoop.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="fingerprintjs2.js"></script>
+
 </head>
 <body>
+  <script>
+      var fp = new Fingerprint2();
+      fp.get(function(result) {
+//          console.log(result);
+      });
+
+  </script>
     <h1>Chase</h1>
 
     </br>
@@ -32,7 +42,7 @@
         </div>
 
         <div class="form-group">
-            <input type="button" value="Submit" />
+            <input type="button" id="btn" value="Submit" />
         </div>
     </form>
 

